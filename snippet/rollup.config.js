@@ -58,6 +58,14 @@ export default [
         ],
       }),
       commonjs(),
+      alias({
+        entries: [
+          { find: 'react', replacement: 'preact/compat' },
+          { find: 'react-dom/test-utils', replacement: 'preact/test-utils' },
+          { find: 'react-dom', replacement: 'preact/compat' },
+          { find: 'react/jsx-runtime', replacement: 'preact/jsx-runtime' },
+        ],
+      }),
       postcss({
         extract: false,
         modules: false,

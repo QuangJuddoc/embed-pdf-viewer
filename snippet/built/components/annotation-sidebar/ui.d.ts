@@ -9,9 +9,9 @@ import { PdfStandardFontFamily, PdfAnnotationBorderStyle, PdfAnnotationLineEndin
  */
 export declare const useDropdown: () => {
     open: boolean;
-    setOpen: import("preact/hooks").StateUpdater<boolean>;
-    rootRef: import("preact/hooks").Ref<HTMLDivElement>;
-    selectedItemRef: import("preact/hooks").Ref<HTMLElement>;
+    setOpen: import("preact/hooks").Dispatch<import("preact/hooks").StateUpdater<boolean>>;
+    rootRef: import("preact").RefObject<HTMLDivElement>;
+    selectedItemRef: import("preact").RefObject<HTMLElement>;
 };
 export declare const Slider: ({ value, min, max, step, onChange, }: {
     value: number;
