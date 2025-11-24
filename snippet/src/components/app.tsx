@@ -273,9 +273,26 @@ export const menuItems: Record<string, MenuItem<State>> = {
     //shortcut: 'Shift+M',
     //shortcutLabel: 'M',
     type: 'menu',
-    children: ['openFile', 'download', 'enterFS', 'screenshot', 'print'],
+    children: ['saveReview', 'openFile', 'download', 'enterFS', 'screenshot', 'print'],
     active: (storeState) =>
       storeState.plugins.ui.commandMenu.commandMenu.activeCommand === 'menuCtr',
+  },
+  saveReview: {
+    id: 'saveReview',
+    icon: 'saveReview',
+    label: 'Save Review',
+    //shortcut: 'Shift+D',
+    //shortcutLabel: 'D',
+    type: 'action',
+    action: (registry) => {
+      const exportPlugin = registry.getPlugin<ExportPlugin>(EXPORT_PLUGIN_ID)?.provides();
+      if (exportPlugin) {
+        if ((window as any).saveAsCopyHandler) {
+          const blob = exportPlugin.saveAsCopy();
+          (window as any).saveAsCopyHandler(blob);
+        }
+      }
+    },
   },
   download: {
     id: 'download',

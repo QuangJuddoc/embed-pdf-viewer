@@ -15,3 +15,6 @@ config/tsup.frameworks.config.bundled*
 publish-summary.json
 **/.svelte-kit
 **/*/*.tgz
+
+# Keep all dist folders ignored except the one inside snippet (we need it tracked)
+!snippet/dist

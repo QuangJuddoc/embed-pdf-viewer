@@ -1,7 +1,7 @@
 import { IconProps } from '@embedpdf/plugin-ui';
 import { h, ComponentChildren, Ref, JSX } from 'preact';
 
-type ButtonProps = JSX.ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = JSX.HTMLAttributes<HTMLButtonElement> & {
   id?: string;
   children: ComponentChildren;
   onClick?: h.JSX.MouseEventHandler<HTMLButtonElement> | undefined;
